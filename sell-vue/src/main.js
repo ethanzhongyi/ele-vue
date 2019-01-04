@@ -1,10 +1,17 @@
 import Vue from 'vue'
-import './cube-ui'
-import App from './App.vue'
-import './register'
+import axios from 'axios'
+import App from './App'
+import router from './router'
+
+import 'common/stylus/index.styl'
+
+Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
+/* eslint-disable no-new */
 new Vue({
+  el: '#app',
+  router,
   render: h => h(App)
-}).$mount('#app')
+})
