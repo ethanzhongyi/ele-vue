@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <v-header :seller='seller'></v-header>
-    <header-detail :seller='seller'></header-detail>
     <Tabs></Tabs>
     <keep-alive>
       <router-view :seller="seller"></router-view>

@@ -168,6 +168,7 @@ export default {
 <style lang="stylus" scoped>
 @import "../../common/stylus/mixin.styl"
 @import "../../common/stylus/icon.styl"
+@import "../../common/stylus/index.styl"
 
 .goods
   display flex
