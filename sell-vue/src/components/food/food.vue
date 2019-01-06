@@ -41,7 +41,7 @@
                   <span class="name">{{rating.username}}</span>
                   <img class="avatar" width="12" height="12" :src="rating.avatar">
                 </div>
-                <div class="time">{{rating.rateTime}}</div>
+                <div class="time">{{rating.rateTime | formatDate}}</div>
                 <p class="text">
                   <span :class="{'icon-arrow_lift':rating.rateType===0,'icon-check_circle':rating.rateType===1}"></span>{{rating.text}}
                 </p>
@@ -61,6 +61,7 @@ import BScroll from 'better-scroll'
 import cartcontrol from 'components/cartcontrol/cartcontrol'
 import split from 'components/split/split'
 import ratingselect from 'components/ratingselect/ratingselect'
+import { formatDate } from 'common/js/date'
 
 const ALL = 2
 
@@ -132,6 +133,12 @@ export default {
       })
     }
 	},
+  filters: {
+    formatDate(time) {
+      let date = new Date(time)
+      return formatDate(date, 'yyyy-MM-dd hh:mm')
+    }
+  },
 	components: {
     cartcontrol,
     split,
