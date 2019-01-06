@@ -41,6 +41,7 @@
       </div>
       <shopcart ref="shopcart" :selectFoods="selectFoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
     </div>
+    <food v-show='showFood' class='food' :food='selectedFood' ref='food'></food>
   </div>
 </template>
 
@@ -49,6 +50,7 @@ import BScroll from 'better-scroll'
 import Icon from 'components/icon-span/icon-span'
 import shopcart from 'components/shopcart/shopcart'
 import cartcontrol from 'components/cartcontrol/cartcontrol'
+import food from 'components/food/food'
 
 const ERR_OK = 0
 const debug = process.env.NODE_ENV !== 'production'
@@ -65,7 +67,8 @@ export default {
       icon_3: 3,
       listHeight: [],
       scrollY: 0,
-      selectedFood: {}
+      selectedFood: {},
+      showFood: false
     }
   },
   created() {
@@ -160,7 +163,8 @@ export default {
   components: {
     Icon,
     shopcart,
-    cartcontrol
+    cartcontrol,
+    food
   }
 }
 </script>
