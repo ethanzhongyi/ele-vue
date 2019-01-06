@@ -68,14 +68,14 @@ export default {
       if (!event._constructed) {
         return
       }
-      this.selectType = type
+      //this.selectType = type  //emit select事件到父组件里面去做
       this.$emit('select', type)
     },
     toggleContent(event) {
       if (!event._constructed) {
         return
       }
-      this.onlyContent = !this.onlyContent
+      //this.onlyContent = !this.onlyContent  //emit toggle 事件到父组件里面去做
       this.$emit('toggle')
     }
   }

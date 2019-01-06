@@ -33,10 +33,10 @@
         <split></split>
         <div class="rating">
           <h1 class="title">商品评价</h1>
-          <ratingselect :selectType="selectType" :onlyContent="onlyContent" :desc="desc" :ratings="food.ratings"></ratingselect>
+          <ratingselect @select="selectRating" @toggle="toggleContent" :selectType="selectType" :onlyContent="onlyContent" :desc="desc" :ratings="food.ratings"></ratingselect>
           <div class="rating-wrapper">
             <ul v-show="food.ratings && food.ratings.length">
-              <li class="rating-item border-1px" v-for="(rating, index) in food.ratings" :key="index">
+              <li v-show="needShow(rating.rateType, rating.text)" class="rating-item border-1px" v-for="(rating, index) in food.ratings" :key="index">
                 <div class="user">
                   <span class="name">{{rating.username}}</span>
                   <img class="avatar" width="12" height="12" :src="rating.avatar">
@@ -108,7 +108,29 @@ export default {
 	  	}
 	  	this.$emit('add', event.target)
         Vue.set(this.food, 'count', 1)
-	  }
+	  },
+    needShow(type, text) {
+      if (this.onlyContent && !text) {
+        return false
+      }
+      if (this.selectType === ALL) {
+        return true
+      } else {
+        return type === this.selectType
+      }
+    },
+    selectRating (type) {
+      this.selectType = type
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    },
+    toggleContent () {
+      this.onlyContent = !this.onlyContent
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    }
 	},
 	components: {
     cartcontrol,
@@ -264,5 +286,9 @@ export default {
             color rgb(0, 160, 220)
           .icon-check_circle
             color rgb(147, 153, 159)
+      .no-rating
+        padding 16px 0
+        font-size 12px
+        color rgb(147, 153, 159)
 
 </style>
