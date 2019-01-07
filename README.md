@@ -1,9 +1,108 @@
-# ele-vue
-模仿饿了么外卖`web app`
 
-> 项目地址： `http://ustbhuangyi.com/sell/?id=3#/goods`
+![项目展示](https://github.com/sayid95/MD-pic/blob/master/pic/eleme.png)
 
-#### 知识点 1：`header-detail`  这种全屏类的弹窗组件 应该放在  `body`  下的，组件用到 `fixed` 布局，如果嵌套的话的可能会 `bug` ,可以使用 `cube-ui` 的 `createAPI` 模块申明式的去写，`api`式的去调用组件
+项目介绍： 
+
+* 掌担Vue.js在实战项目中的运用
+
+* 学会使用Vue.js开发完整的移动端App
+	
+* 学会前端工程化、组件化、模块化的开发方式
+
+
+
+学习内容 ：
+	 
+* Vue 核心思想：组件化、数据驱动
+	
+* Vue-cli脚手架
+	
+* Vue-router
+
+* Vue-resource
+
+* webpack
+
+* es6+eslint
+
+* 工程化、组件化、模块化
+
+* 移动端开发常用技巧
+
+
+
+Vue-cli：
+
+* Vue-cli脚手架介绍
+
+* Vue-cli脚手架安装
+
+* Vue-cli安装后的项目文件详细介绍
+
+* Vue-cli生成的项目调试
+* Vue-cli webpack dev 配置脚本详细介绍
+
+
+
+项目准备工作：
+*  需求分析
+*  项目资源准备
+*  制作iconfont图标字体
+*  代码目录结构设计
+*  模拟测试数据
+
+
+
+项目页面骨架开发：
+* 整体设计
+* 组件拆分
+* Vue-router使用
+* flex弹性布局介绍
+* 移动端1px边框实现
+
+
+
+Header 组件：
+* Vue-resource 应用
+* Vue过渡动画应用
+* css sticky footer 布局介绍
+* star星星组件抽象
+* 图片和背景高斯模糊效果实现
+
+
+
+goods商品列表页：
+* Vue项目中引入第三方JS库better-scroll
+* Vue.js计算属性的应用
+* 处理移动端列表滚动
+* 实现多列表滚动联动
+* 自定义Vue.js 过渡动画实现小球飞人动画效果
+* 贝塞尔曲线缓动函数应用
+* 父子组件通讯
+
+
+
+food商品详情页：
+* 图片默认占位技巧介绍
+* split分隔组件抽样
+* ratingselect 评论组件抽样
+* 自定义过滤器 datefilter
+
+
+
+ratings评价列表：
+* Vue.js组件复用
+* 媒体查询适应小屏幕手机
+
+
+
+seller商家详情页：
+* 基于localStorage的移动端通用数据存取方案
+* keep-alive实现Vue.js组件缓存，体验优化
+
+
+
+#### 知识点 1：`header-detail`  这种全屏类的弹窗组件 应该放在  `body`  下的，组件用到 `fixed` 布局，如果嵌套的话的可能会 `bug` ,我也使用了cube-ui 来实现商品的联动，也可以使用 `cube-ui` 的 `createAPI` 模块申明式的去写，`api`式的去调用组件
 
 
 
