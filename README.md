@@ -102,6 +102,12 @@ seller商家详情页：
 
 
 
+小技巧：
+
+图片模糊效果 `filter blur(5px)`
+
+
+
 #### 知识点 1：`header-detail`  这种全屏类的弹窗组件 应该放在  `body`  下的，组件用到 `fixed` 布局，如果嵌套的话的可能会 `bug` ,我也使用了cube-ui 来实现商品的联动，也可以使用 `cube-ui` 的 `createAPI` 模块申明式的去写，`api`式的去调用组件
 
 
